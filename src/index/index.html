@@ -1,0 +1,94 @@
+<!--
+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @Date: 2023-11-28 19:19:49
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-12-14 13:27:14
+ * @FilePath: /bnxf.net/src/index/index.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  <title>Index</title>
+  <meta name="description" content="">
+        
+</head>
+<body>
+    <div id="app" class="invisible h-full">
+        <div class="flex md:sticky md:bg-white md:top-0 md:px-5 md:py-4 md:items-center max-md:p-3 max-md:sticky max-md:top-0 max-md:bg-gray-1">
+            <div class="md:hidden">
+                <div @click.stop="showMenu=!showMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 fill-gray-5"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+                </div>
+            </div>
+            <div class="md:text-2xl md:font-serif cursor-pointer duration-100 max-md:text-center max-md:flex-1">WWW.<span class="text-blue-3 hover:text-red-1 duration-200">BNXF</span>.NET</div>
+            <div class="nav" :class="{'max-md:hidden':!showMenu}" @click.stop>
+                <div ref="nav">
+                    <div>推荐</div>
+                    <div>Css</div>
+                    <div>Vue</div>
+                    <div>Mysql</div>
+                    <div>Mysql</div>
+                    <div>万里无一</div>
+                    <div>Php</div>
+                </div>
+                <i class="absolute bg-blue-3 w-6 h-[4px] bottom-0 rounded-full max-md:hidden" :style="navCurrentStyle"></i>
+            </div>
+            <div>
+                <button type="button" class="yp-btn">登录</button>
+            </div>
+        </div>
+
+        <div class="w-full h-full mt-5 flex md:space-x-5 max-md:px-2 container mx-auto">
+            <div class="bg-white w-52 rounded max-md:hidden">
+                <div class="px-5 py-3 border-b border-gray-3.5 flex items-center space-x-2">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 fill-gray-4"><path d="M5 2H19C19.5523 2 20 2.44772 20 3V22.1433C20 22.4194 19.7761 22.6434 19.5 22.6434C19.4061 22.6434 19.314 22.6168 19.2344 22.5669L12 18.0313L4.76559 22.5669C4.53163 22.7136 4.22306 22.6429 4.07637 22.4089C4.02647 22.3293 4 22.2373 4 22.1433V3C4 2.44772 4.44772 2 5 2Z"></path></svg>
+                    </div>
+                    <div>热门标签</div>
+                </div>
+                <div>
+                    <div>
+                        <div></div>
+                        <div>关注</div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 space-y-5 bg-white rounded">
+                <a class="block space-y-2">
+                    <div class="font-bold">写给后端大忙人看的vue入门指南</div>
+                    <div class="text-gray-4 text-sm">
+                        在前端开发中，如果你要使用Vue框架你也需要进行框架的引入相关Vue依赖。在前端用于管理依赖的工具并没有像后端一样采用Maven来进行管理，而是引入了一个新的工具——脚手架。
+                    </div>
+                </a>
+                <a class="block space-y-2">
+                    <div class="font-bold">写给后端大忙人看的vue入门指南</div>
+                    <div class="text-gray-6 text-sm">
+                        在前端开发中，如果你要使用Vue框架你也需要进行框架的引入相关Vue依赖。在前端用于管理依赖的工具并没有像后端一样采用Maven来进行管理，而是引入了一个新的工具——脚手架。
+                    </div>
+                </a>
+                <a class="block space-y-2">
+                    <div class="font-bold">写给后端大忙人看的vue入门指南</div>
+                    <div class="text-gray-6 text-sm">
+                        在前端开发中，如果你要使用Vue框架你也需要进行框架的引入相关Vue依赖。在前端用于管理依赖的工具并没有像后端一样采用Maven来进行管理，而是引入了一个新的工具——脚手架。
+                    </div>
+                </a>
+                <a class="block space-y-2">
+                    <div class="font-bold">写给后端大忙人看的vue入门指南</div>
+                    <div class="text-gray-6 text-sm">
+                        在前端开发中，如果你要使用Vue框架你也需要进行框架的引入相关Vue依赖。在前端用于管理依赖的工具并没有像后端一样采用Maven来进行管理，而是引入了一个新的工具——脚手架。
+                    </div>
+                </a>
+            </div>
+            <div class="bg-white w-72 rounded max-lg:hidden"></div>
+        </div>
+        <div class="fixed bottom-0 p-3 bg-gray-2 w-full text-gray-6 text-center md:text-base max-md:text-xs">
+            &copy;2023 东海县一品网络技术有限公司 版权所有 苏ICP备 <a rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" title="">苏ICP备2022044423号-2</a>
+        </div>
+    </div>
+</body>
+<script src="./../js/import.js?load=index" id="animatic" type="module"></script>
+</html>

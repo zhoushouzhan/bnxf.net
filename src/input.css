@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body{
+    @apply h-full bg-gray-3 overflow-x-hidden
+}
+.invisible{
+    @apply hidden
+}
+.outbox{
+    @apply bg-white w-full
+}
+.mc{
+    @apply max-w-[1200px] mx-auto
+}
+
+
+.ypanimation-enter-active{
+    animation: bounce-in 0.3s;
+}
+.ypanimation-leave-active{
+    animation: bounce-in 0.3s reverse;
+}
+@keyframes bounce-in{
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.nav{
+    @apply md:sticky md:top-0 md:ml-5 max-md:absolute max-md:w-full max-md:left-0 max-md:top-12 md:flex-1
+}
+.nav>div{
+    @apply flex md:space-x-10 md:px-5 md:py-2 max-md:space-x-0 max-md:flex-col max-md:w-full max-md:bg-gray-1
+}
+.nav>div>div{
+    @apply max-md:border-b-gray-4 max-md:border-b max-md:p-2 md:text-center whitespace-nowrap
+}
+.yp-btn{
+    @apply bg-red-1 text-sm rounded px-2 py-1 text-white hover:bg-opacity-90
+}
