@@ -1,0 +1,101 @@
+<!--
+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @Date: 2023-11-28 19:19:49
+ * @LastEditors: Ypjs 5166651888@163.com
+ * @LastEditTime: 2023-12-16 20:02:17
+ * @FilePath: /bnxf.net/src/index/index.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/prism.css" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/fonts/remixicon.css" />
+  <title>Index</title>
+  <meta name="description" content="">
+        
+</head>
+<body>
+    <div id="app" class="invisible h-full">
+        <div class="md:sticky md:bg-white md:top-0 md:px-5 md:py-4 max-md:p-3 max-md:sticky max-md:top-0 max-md:bg-gray-1 z-50">
+            <div class="flex container mx-auto items-center">
+                <div class="md:hidden">
+                    <div @click.stop="showMenu=!showMenu">
+                        <i class="ri-close-circle-fill ri-2x text-red-1" v-if="showMenu"></i>
+                        <i class="ri-menu-fill ri-2x" v-else></i>
+                    </div>
+                </div>
+                <div class="md:text-2xl md:font-serif cursor-pointer duration-100 max-md:flex max-md:justify-center max-md:flex-1">
+                    <img src="/dist/img/logo.png" class="md:h-12 max-md:h-10 object-cover" alt="">
+                </div>
+                <div class="nav" :class="{'max-md:hidden':!showMenu}" @click.stop>
+                    <div ref="nav">
+                        <div>文章</div>
+                        <div>Css</div>
+                        <div>Vue</div>
+                        <div>Mysql</div>
+                        <div>Mysql</div>
+                        <div>万里无一</div>
+                        <div>Php</div>
+                    </div>
+                    <i class="absolute bg-blue-3 w-6 h-[4px] bottom-0 rounded-full max-md:hidden" :style="navCurrentStyle"></i>
+                </div>
+                <div>
+                    <button type="button" class="yp-btn">登录</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 flex md:space-x-5 max-md:px-2 container mx-auto">
+            <div class="md:flex-1 bg-white md:p-9 flex flex-col md:space-y-5 max-md:w-full max-md:space-y-3 max-md:p-2 rounded">
+                <h1 class="font-bold md:text-2xl">一周的努力化为泡影，前端找工作是很难</h1>
+                <div class="flex space-x-2 py-2 text-sm text-gray-4">
+                    <div>逆流的鱼</div>
+                    <div>2023-12-15</div>
+                    <div class="flex space-x-1">
+                        <div>
+                            <i class="ri-eye-line ri-lg"></i>
+                        </div>
+                        <div>23,198</div>
+                    </div>
+                </div>
+                <div class="leading-7 text-gray-6">
+                    <p>这周又是面了一周，今天是周五了，目前还没有一个offer。好几家面试都是聊的很好，问题回答的自我感觉挺好（可能面试官没觉得好），然后就没有了后续。这周一共面试了6家公司，目前有2家过了2面。下周约了3面线下，可能工资不会给的太多。其中最遗憾的一家是bitget，二面面试官迟到了10分钟，然后面了半个小时不到，面试官匆匆结束面试，整个过程我也没觉得讲的多差，反正草草收场让我有点懵逼，我后来问HR说没有后续了，很可能我是被当成KPI了。下周继续努力吧！！！</p>
+<p>
+<pre><code class="language-css">html,body{
+@apply h-full bg-gray-1
+}
+.invisible{
+    @apply hidden
+}
+.outbox{
+    @apply bg-white w-full
+}
+.mc{
+    @apply max-w-[1200px] mx-auto
+}</code></pre>
+</p>
+
+                </div>
+                <div class="flex items-center">
+                    <div>标签：</div>
+                    <div class="flex-1 flex items-center space-x-3">
+                        <div class="bnxf-label">222</div>
+                        <div class="bnxf-label">222</div>
+                        <div class="bnxf-label">222</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white w-72 rounded max-xl:hidden"></div>
+        </div>
+        <div class="fixed bottom-0 p-3 bg-gray-2 w-full text-gray-6 text-center md:text-sm max-md:text-xs z-40">
+            <p>&copy;2023 东海县一品网络技术有限公司 版权所有 </p>
+            <p><a rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="hover:text-red-1">苏ICP备2022044423号-2</a></p>
+        </div>
+    </div>
+</body>
+<script src="./../js/import.js?load=index" id="animatic" type="module"></script>
+</html>

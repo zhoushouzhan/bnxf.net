@@ -3,18 +3,11 @@
 @tailwind utilities;
 
 html,body{
-    @apply h-full bg-gray-3 overflow-x-hidden
+    @apply h-full bg-gray-3 overflow-x-hidden md:pb-10 max-md:pb-14
 }
 .invisible{
     @apply hidden
 }
-.outbox{
-    @apply bg-white w-full
-}
-.mc{
-    @apply max-w-[1200px] mx-auto
-}
-
 
 .ypanimation-enter-active{
     animation: bounce-in 0.3s;
@@ -32,14 +25,68 @@ html,body{
 }
 
 .nav{
-    @apply md:sticky md:top-0 md:ml-5 max-md:absolute max-md:w-full max-md:left-0 max-md:top-12 md:flex-1
+    @apply md:sticky md:top-0 md:ml-5 max-md:absolute max-md:w-full max-md:left-0 max-md:top-[72px] md:flex-1 z-50
 }
 .nav>div{
-    @apply flex md:space-x-10 md:px-5 md:py-2 max-md:space-x-0 max-md:flex-col max-md:w-full max-md:bg-gray-1
+    @apply flex md:space-x-10 md:px-5 md:py-2 max-md:space-x-0 max-md:flex-col max-md:w-full max-md:bg-white max-md:bg-opacity-95 max-md:divide-y max-md:divide-gray-1 max-md:shadow
 }
 .nav>div>div{
-    @apply max-md:border-b-gray-4 max-md:border-b max-md:p-2 md:text-center whitespace-nowrap
+    @apply max-md:border-b-gray-4 max-md:p-2 md:text-center whitespace-nowrap
 }
 .yp-btn{
     @apply bg-red-1 text-sm rounded px-2 py-1 text-white hover:bg-opacity-90
+}
+
+.index_tags{
+    @apply p-3 space-y-5
+}
+.index_tags>div{
+    @apply flex items-center space-x-2 text-gray-6 hover:text-green-6 py-1.5 px-2
+}
+.index_tags>div>div:nth-child(3){
+    @apply text-gray-4 text-sm
+}
+.index_tags>div.current{
+    @apply text-gray-6 bg-gray-3.5 rounded py-1.5 px-2 shadow
+}
+.index_tags>div.current svg{
+    @apply fill-gray-6
+}
+.index_tags>div.current>div:nth-child(3){
+    @apply text-gray-6
+}
+
+.bnxf-label{
+    @apply bg-gray-3 rounded px-2 py-[2px] text-gray-5 hover:bg-blue-3 hover:text-white duration-300
+}
+
+.article-list{
+    @apply space-y-5 bg-white flex-1 rounded
+}
+
+.article-list>div{
+    @apply  hover:bg-gray-2 flex md:space-x-4 max-md:space-x-2 md:p-3 max-md:p-2
+}
+.article-list>div>.info{
+    @apply flex-1 flex flex-col justify-between
+}
+.article-list>div>.info .title{
+    @apply font-bold whitespace-nowrap overflow-hidden text-ellipsis max-sm:w-[210px]
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.article-list>div>.info .intro{
+    @apply relative overflow-hidden w-full h-8 text-sm max-sm:text-xs z-10
+}
+
+.article-list>div>.info .tags{
+    @apply flex space-x-3 max-lg:hidden
+}
+
+.article-list>div>div.thumb{
+    @apply flex flex-shrink-0 w-28 h-20 rounded overflow-hidden
+}
+.article-list>div>div.thumb img{
+    @apply object-cover
 }

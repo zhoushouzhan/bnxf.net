@@ -1,8 +1,8 @@
 <!--
  * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
  * @Date: 2023-11-28 19:19:49
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-14 13:27:14
+ * @LastEditors: Ypjs 5166651888@163.com
+ * @LastEditTime: 2023-12-16 17:23:21
  * @FilePath: /bnxf.net/src/index/index.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -12,81 +12,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/fonts/remixicon.css" />
   <title>Index</title>
   <meta name="description" content="">
         
 </head>
 <body>
     <div id="app" class="invisible h-full">
-        <div class="flex md:sticky md:bg-white md:top-0 md:px-5 md:py-4 md:items-center max-md:p-3 max-md:sticky max-md:top-0 max-md:bg-gray-1">
-            <div class="md:hidden">
-                <div @click.stop="showMenu=!showMenu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 fill-gray-5"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+        <div class="md:sticky md:bg-white md:top-0 md:px-5 md:py-4 max-md:p-3 max-md:sticky max-md:top-0 max-md:bg-gray-1 z-50">
+            <div class="flex container mx-auto items-center">
+                <div class="md:hidden">
+                    <div @click.stop="showMenu=!showMenu">
+                        <i class="ri-close-circle-fill ri-2x text-red-1" v-if="showMenu"></i>
+                        <i class="ri-menu-fill ri-2x" v-else></i>
+                    </div>
                 </div>
-            </div>
-            <div class="md:text-2xl md:font-serif cursor-pointer duration-100 max-md:text-center max-md:flex-1">WWW.<span class="text-blue-3 hover:text-red-1 duration-200">BNXF</span>.NET</div>
-            <div class="nav" :class="{'max-md:hidden':!showMenu}" @click.stop>
-                <div ref="nav">
-                    <div>推荐</div>
-                    <div>Css</div>
-                    <div>Vue</div>
-                    <div>Mysql</div>
-                    <div>Mysql</div>
-                    <div>万里无一</div>
-                    <div>Php</div>
+                <div class="md:text-2xl md:font-serif cursor-pointer duration-100 max-md:flex max-md:justify-center max-md:flex-1">
+                    <img src="/dist/img/logo.png" class="md:h-12 max-md:h-10 object-cover" alt="">
                 </div>
-                <i class="absolute bg-blue-3 w-6 h-[4px] bottom-0 rounded-full max-md:hidden" :style="navCurrentStyle"></i>
-            </div>
-            <div>
-                <button type="button" class="yp-btn">登录</button>
+                <div class="nav" :class="{'max-md:hidden':!showMenu}" @click.stop>
+                    <div ref="nav">
+                        <div>文章</div>
+                        <div>Css</div>
+                        <div>Vue</div>
+                        <div>Mysql</div>
+                        <div>Mysql</div>
+                        <div>万里无一</div>
+                        <div>Php</div>
+                    </div>
+                    <i class="absolute bg-blue-3 w-6 h-[4px] bottom-0 rounded-full max-md:hidden" :style="navCurrentStyle"></i>
+                </div>
+                <div>
+                    <button type="button" class="yp-btn">登录</button>
+                </div>
             </div>
         </div>
 
-        <div class="w-full h-full mt-5 flex md:space-x-5 max-md:px-2 container mx-auto">
-            <div class="bg-white w-52 rounded max-md:hidden">
+        <div class="mt-5 flex md:space-x-5 max-md:px-2 container mx-auto min-h-full">
+            <div class="bg-white w-52 rounded max-lg:hidden">
                 <div class="px-5 py-3 border-b border-gray-3.5 flex items-center space-x-2">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 fill-gray-4"><path d="M5 2H19C19.5523 2 20 2.44772 20 3V22.1433C20 22.4194 19.7761 22.6434 19.5 22.6434C19.4061 22.6434 19.314 22.6168 19.2344 22.5669L12 18.0313L4.76559 22.5669C4.53163 22.7136 4.22306 22.6429 4.07637 22.4089C4.02647 22.3293 4 22.2373 4 22.1433V3C4 2.44772 4.44772 2 5 2Z"></path></svg>
                     </div>
                     <div>热门标签</div>
                 </div>
-                <div>
+                <div class="index_tags">
                     <div>
-                        <div></div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 fill-gray-4"><path d="M10.9042 2.10025L20.8037 3.51446L22.2179 13.414L13.0255 22.6063C12.635 22.9969 12.0019 22.9969 11.6113 22.6063L1.71184 12.7069C1.32131 12.3163 1.32131 11.6832 1.71184 11.2926L10.9042 2.10025ZM11.6113 4.22157L3.83316 11.9997L12.3184 20.485L20.0966 12.7069L19.036 5.28223L11.6113 4.22157ZM13.7327 10.5855C12.9516 9.80448 12.9516 8.53815 13.7327 7.7571C14.5137 6.97606 15.78 6.97606 16.5611 7.7571C17.3421 8.53815 17.3421 9.80448 16.5611 10.5855C15.78 11.3666 14.5137 11.3666 13.7327 10.5855Z"></path></svg>
+                        </div>
                         <div>关注</div>
+                        <div>（99）</div>
                     </div>
+
+                    <div class="current">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 fill-gray-4"><path d="M10.9042 2.10025L20.8037 3.51446L22.2179 13.414L13.0255 22.6063C12.635 22.9969 12.0019 22.9969 11.6113 22.6063L1.71184 12.7069C1.32131 12.3163 1.32131 11.6832 1.71184 11.2926L10.9042 2.10025ZM11.6113 4.22157L3.83316 11.9997L12.3184 20.485L20.0966 12.7069L19.036 5.28223L11.6113 4.22157ZM13.7327 10.5855C12.9516 9.80448 12.9516 8.53815 13.7327 7.7571C14.5137 6.97606 15.78 6.97606 16.5611 7.7571C17.3421 8.53815 17.3421 9.80448 16.5611 10.5855C15.78 11.3666 14.5137 11.3666 13.7327 10.5855Z"></path></svg>
+                        </div>
+                        <div>关注</div>
+                        <div>（99）</div>
+                    </div>
+                    <div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 fill-gray-4"><path d="M10.9042 2.10025L20.8037 3.51446L22.2179 13.414L13.0255 22.6063C12.635 22.9969 12.0019 22.9969 11.6113 22.6063L1.71184 12.7069C1.32131 12.3163 1.32131 11.6832 1.71184 11.2926L10.9042 2.10025ZM11.6113 4.22157L3.83316 11.9997L12.3184 20.485L20.0966 12.7069L19.036 5.28223L11.6113 4.22157ZM13.7327 10.5855C12.9516 9.80448 12.9516 8.53815 13.7327 7.7571C14.5137 6.97606 15.78 6.97606 16.5611 7.7571C17.3421 8.53815 17.3421 9.80448 16.5611 10.5855C15.78 11.3666 14.5137 11.3666 13.7327 10.5855Z"></path></svg>
+                        </div>
+                        <div>关注</div>
+                        <div>（99）</div>
+                    </div>
+
                 </div>
             </div>
-            <div class="p-5 space-y-5 bg-white rounded">
-                <a class="block space-y-2">
-                    <div class="font-bold">写给后端大忙人看的vue入门指南</div>
-                    <div class="text-gray-4 text-sm">
-                        在前端开发中，如果你要使用Vue框架你也需要进行框架的引入相关Vue依赖。在前端用于管理依赖的工具并没有像后端一样采用Maven来进行管理，而是引入了一个新的工具——脚手架。
+            <div class="article-list">
+
+                <div v-for="i in 13">
+                    <div class="info">
+                        <div class="title">写给后端大忙人看的vue入门指南</div>
+                        <div class="intro">
+                            <div class="whitespace-nowrap absolute text-gray-5 py-2 z-10">
+                                在前端开发中，如果你要使用Vue框架你也需要进行框架的引入相关Vue依赖。在前端用于管理依赖的工具并没有像后端一样采用Maven来进行管理，而是引入了一个新的工具——脚手架。
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-5 space-x-3">
+                            <div class="flex">
+                                <div>
+                                    逆流的鱼
+                                </div>
+                                <div class="flex text-sm text-gray-4">
+                                    <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 fill-gray-4"><path d="M12.0003 3C17.3924 3 21.8784 6.87976 22.8189 12C21.8784 17.1202 17.3924 21 12.0003 21C6.60812 21 2.12215 17.1202 1.18164 12C2.12215 6.87976 6.60812 3 12.0003 3ZM12.0003 19C16.2359 19 19.8603 16.052 20.7777 12C19.8603 7.94803 16.2359 5 12.0003 5C7.7646 5 4.14022 7.94803 3.22278 12C4.14022 16.052 7.7646 19 12.0003 19ZM12.0003 16.5C9.51498 16.5 7.50026 14.4853 7.50026 12C7.50026 9.51472 9.51498 7.5 12.0003 7.5C14.4855 7.5 16.5003 9.51472 16.5003 12C16.5003 14.4853 14.4855 16.5 12.0003 16.5ZM12.0003 14.5C13.381 14.5 14.5003 13.3807 14.5003 12C14.5003 10.6193 13.381 9.5 12.0003 9.5C10.6196 9.5 9.50026 10.6193 9.50026 12C9.50026 13.3807 10.6196 14.5 12.0003 14.5Z"></path></svg></div>
+                                    <div class="px-2">767</div>
+                                </div>
+                                <div class="flex text-sm text-gray-4">
+                                    <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 fill-gray-4"><path d="M14.5998 8.00033H21C22.1046 8.00033 23 8.89576 23 10.0003V12.1047C23 12.3659 22.9488 12.6246 22.8494 12.8662L19.755 20.3811C19.6007 20.7558 19.2355 21.0003 18.8303 21.0003H2C1.44772 21.0003 1 20.5526 1 20.0003V10.0003C1 9.44804 1.44772 9.00033 2 9.00033H5.48184C5.80677 9.00033 6.11143 8.84246 6.29881 8.57701L11.7522 0.851355C11.8947 0.649486 12.1633 0.581978 12.3843 0.692483L14.1984 1.59951C15.25 2.12534 15.7931 3.31292 15.5031 4.45235L14.5998 8.00033ZM7 10.5878V19.0003H18.1606L21 12.1047V10.0003H14.5998C13.2951 10.0003 12.3398 8.77128 12.6616 7.50691L13.5649 3.95894C13.6229 3.73105 13.5143 3.49353 13.3039 3.38837L12.6428 3.0578L7.93275 9.73038C7.68285 10.0844 7.36341 10.3746 7 10.5878ZM5 11.0003H3V19.0003H5V11.0003Z"></path></svg></div>
+                                    <div class="px-2">760</div>
+                                </div>
+                                <div class="flex text-sm text-gray-4 max-md:hidden">
+                                    <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 fill-gray-4"><path d="M2 8.99374C2 5.68349 4.67654 3 8.00066 3H15.9993C19.3134 3 22 5.69478 22 8.99374V21H8.00066C4.68659 21 2 18.3052 2 15.0063V8.99374ZM20 19V8.99374C20 6.79539 18.2049 5 15.9993 5H8.00066C5.78458 5 4 6.78458 4 8.99374V15.0063C4 17.2046 5.79512 19 8.00066 19H20ZM14 11H16V13H14V11ZM8 11H10V13H8V11Z"></path></svg></div>
+                                    <div class="px-2">760</div>
+                                </div>
+                            </div>
+
+                            <div class="tags">
+                                <div class="bnxf-label">222</div>
+                                <div class="bnxf-label">222</div>
+                                <div class="bnxf-label">222</div>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <a class="block space-y-2">
-                    <div class="font-bold">写给后端大忙人看的vue入门指南</div>
-                    <div class="text-gray-6 text-sm">
-                        在前端开发中，如果你要使用Vue框架你也需要进行框架的引入相关Vue依赖。在前端用于管理依赖的工具并没有像后端一样采用Maven来进行管理，而是引入了一个新的工具——脚手架。
+                    <div class="thumb">
+                        <img src="/dist/img/av1.png" alt="">
                     </div>
-                </a>
-                <a class="block space-y-2">
-                    <div class="font-bold">写给后端大忙人看的vue入门指南</div>
-                    <div class="text-gray-6 text-sm">
-                        在前端开发中，如果你要使用Vue框架你也需要进行框架的引入相关Vue依赖。在前端用于管理依赖的工具并没有像后端一样采用Maven来进行管理，而是引入了一个新的工具——脚手架。
-                    </div>
-                </a>
-                <a class="block space-y-2">
-                    <div class="font-bold">写给后端大忙人看的vue入门指南</div>
-                    <div class="text-gray-6 text-sm">
-                        在前端开发中，如果你要使用Vue框架你也需要进行框架的引入相关Vue依赖。在前端用于管理依赖的工具并没有像后端一样采用Maven来进行管理，而是引入了一个新的工具——脚手架。
-                    </div>
-                </a>
+                </div>
+
+
+
+
+                
+
             </div>
-            <div class="bg-white w-72 rounded max-lg:hidden"></div>
+            <div class="bg-white w-72 rounded max-xl:hidden"></div>
         </div>
-        <div class="fixed bottom-0 p-3 bg-gray-2 w-full text-gray-6 text-center md:text-base max-md:text-xs">
-            &copy;2023 东海县一品网络技术有限公司 版权所有 苏ICP备 <a rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" title="">苏ICP备2022044423号-2</a>
+        <div class="fixed bottom-0 p-3 bg-gray-2 w-full text-gray-6 text-center md:text-sm max-md:text-xs z-40">
+            <p>&copy;2023 东海县一品网络技术有限公司 版权所有 </p>
+            <p><a rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="hover:text-red-1">苏ICP备2022044423号-2</a></p>
         </div>
     </div>
 </body>

@@ -64,6 +64,7 @@ function createVue(myMixin){
         showMenu:false,
         keywords:'',
         leftWidth:0,
+        navindex:0,
         navCurrentStyle:{
           transform:"translateX(-50%)",
           transition:"left 0.2s ease-in-out",
@@ -102,22 +103,24 @@ function createVue(myMixin){
 
         this.showMenu=false
       })
+      window.addEventListener("resize",()=>{
+        this.pageInt()
+      })
 
     },
     methods:{
       pageInt(){
         this.leftWidth=this.$refs.nav.getBoundingClientRect().left
-        this.lineMove(0)
+        this.lineMove(this.navindex)
         let navItem=this.$refs.nav.children
         for(let i=0;i<navItem.length;i++){
             navItem[i].addEventListener("click",()=>{
               this.lineMove(i)
             })
         }
-
       },
       navclick(e,i){
-        this.nav_current=i
+        this.navindex=i
         let nav=this.$refs.nav
         let navItem=nav.children
         let navwidth=nav.clientWidth
@@ -172,10 +175,7 @@ function createVue(myMixin){
           let dom=this.$refs.nav.children[index]
           let domRect=dom.getBoundingClientRect()
           this.navCurrentStyle.left=domRect.left-this.leftWidth+(domRect.width/2)+"px"
-          console.log(this.navCurrentStyle)
       }
-
-
     }
   })
 
