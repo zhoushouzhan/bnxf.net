@@ -23,7 +23,9 @@ html,body{
         opacity: 1;
     }
 }
-
+input{
+    @apply placeholder:text-sm placeholder:font-thin
+}
 .nav{
     @apply md:sticky md:top-0 md:ml-5 max-md:absolute max-md:w-full max-md:left-0 max-md:top-[72px] md:flex-1 z-50
 }
@@ -34,7 +36,7 @@ html,body{
     @apply max-md:border-b-gray-4 max-md:p-2 md:text-center whitespace-nowrap
 }
 .yp-btn{
-    @apply bg-red-1 text-sm rounded px-2 py-1 text-white hover:bg-opacity-90
+    @apply bg-gray-3 text-sm rounded px-2 py-1 text-gray-6 hover:bg-gray-1 hover:shadow hover:bg-opacity-90 duration-300 active:bg-blue-3 active:text-white
 }
 
 .index_tags{

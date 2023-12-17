@@ -52,13 +52,16 @@ function pagejs(){
     }
 }
 import Swiper from 'https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js'
+import yplogin from '../components/login.js'
 //创建VUE
 function createVue(myMixin){
   const app=Vue.createApp({
+    components:{yplogin},
     mixins:[myMixin],
     data(){
       return{
         loadmore:false,
+        showlogin:false,
         gotop:false,
         opensearch:false,
         showMenu:false,
@@ -100,7 +103,7 @@ function createVue(myMixin){
       })
 
       document.addEventListener("click",()=>{
-
+        this.showlogin=false
         this.showMenu=false
       })
       window.addEventListener("resize",()=>{
