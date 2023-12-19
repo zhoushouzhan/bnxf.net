@@ -85,7 +85,7 @@ function createVue(myMixin){
     mounted(){
       this.invisible()
       this.nowscroll()
-      //所有Dom加载完毕后执行
+      //when all dom loaded ， this is runing
       this.$nextTick(()=>{
         let preDoms=document.querySelectorAll("pre")
         for(let k in preDoms){
@@ -101,9 +101,8 @@ function createVue(myMixin){
         this.pageInt()
     
       })
-
+      //click out area to close this obj
       document.addEventListener("click",()=>{
-        this.showlogin=false
         this.showMenu=false
       })
       window.addEventListener("resize",()=>{
