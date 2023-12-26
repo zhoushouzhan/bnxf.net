@@ -26,6 +26,64 @@ html,body{
 input{
     @apply placeholder:text-sm placeholder:font-thin
 }
+
+.yp-input{
+    @apply flex items-center space-x-5
+}
+.yp-input .inputbox{
+    @apply flex-1 bg-gray-2 rounded px-2 flex items-center border border-gray-2
+}
+.yp-input .inputbox input{
+    @apply outline-none flex-1 bg-transparent py-2
+}
+.yp-input .inputbox .stxt{
+    @apply text-gray-400
+}
+
+
+
+.yp-input .areabox{
+    @apply flex-1 bg-gray-2 rounded p-2 flex flex-col border border-gray-2
+}
+.yp-input .areabox textarea{
+    @apply outline-none bg-transparent resize-none w-full
+}
+.yp-input .areabox .stxt{
+    @apply text-gray-400 w-full text-right
+}
+
+
+
+
+.yp-input-on{
+    @apply flex items-center space-x-5
+}
+.yp-input-on .inputbox{
+    @apply flex-1 bg-white border border-blue-3 rounded px-2 flex items-center
+}
+.yp-input-on .inputbox input{
+    @apply outline-none flex-1 bg-transparent py-2
+}
+.yp-input-on .inputbox .stxt{
+    @apply text-gray-400
+}
+
+
+.yp-input-on .areabox{
+    @apply flex-1 bg-white rounded p-2 flex flex-col border border-blue-3
+}
+
+.yp-input-on .areabox textarea{
+    @apply outline-none bg-transparent resize-none w-full
+}
+
+.yp-input-on .areabox .stxt{
+    @apply text-gray-400 w-full text-right
+}
+
+
+
+
 .nav{
     @apply md:sticky md:top-0 md:ml-5 max-md:absolute max-md:w-full max-md:left-0 max-md:top-[72px] md:flex-1 z-50
 }

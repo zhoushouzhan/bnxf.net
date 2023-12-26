@@ -3,7 +3,8 @@ const parasite = document.querySelector("#animatic");
 //外部脚本列表
 const loadlist=[
     "https://cdn.bootcdn.net/ajax/libs/vue/3.3.4/vue.global.prod.min.js",
-    "https://cdn.bootcdn.net/ajax/libs/axios/0.26.0/axios.js"
+    "https://cdn.bootcdn.net/ajax/libs/axios/0.26.0/axios.js",
+    "https://unpkg.com/js-datepicker@5.18.2/dist/datepicker.min.js"
 ];
 //加载量
 var loadnum=0;
@@ -53,10 +54,12 @@ function pagejs(){
 }
 import Swiper from 'https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js'
 import yplogin from '../components/login.js'
+import ypinput from '../components/ypinput.js?t=1'
+import yparea from '../components/yparea.js?t=1'
 //创建VUE
 function createVue(myMixin){
   const app=Vue.createApp({
-    components:{yplogin},
+    components:{yplogin,ypinput,yparea},
     mixins:[myMixin],
     data(){
       return{

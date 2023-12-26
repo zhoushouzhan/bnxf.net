@@ -1,0 +1,127 @@
+<!--
+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @Date: 2023-11-28 19:19:49
+ * @LastEditors: Ypjs 5166651888@163.com
+ * @LastEditTime: 2023-12-25 21:54:19
+ * @FilePath: /bnxf.net/src/index/index.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/prism.css" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/fonts/remixicon.css" />
+  <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
+  <title>Index</title>
+  <meta name="description" content="">
+        
+</head>
+<body>
+    <div id="app" class="invisible h-full">
+        <div class="md:sticky md:bg-white md:top-0 md:px-5 md:py-4 max-md:p-3 max-md:sticky max-md:top-0 max-md:bg-gray-1 z-50">
+            <div class="flex container mx-auto items-center">
+                <div class="md:hidden">
+                    <div @click.stop="showMenu=!showMenu">
+                        <i class="ri-close-circle-fill ri-2x text-red-1" v-if="showMenu"></i>
+                        <i class="ri-menu-fill ri-2x" v-else></i>
+                    </div>
+                </div>
+                <div class="md:text-2xl md:font-serif cursor-pointer duration-100 max-md:flex max-md:justify-center max-md:flex-1">
+                    <img src="/dist/img/logo.png" class="md:h-12 max-md:h-10 object-cover" alt="">
+                </div>
+                <div class="nav" :class="{'max-md:hidden':!showMenu}" @click.stop>
+                    <div ref="nav">
+                        <div>文章</div>
+                        <div>Css</div>
+                        <div>Vue</div>
+                        <div>Mysql</div>
+                        <div>Mysql</div>
+                        <div>万里无一</div>
+                        <div>Php</div>
+                    </div>
+                    <i class="absolute bg-blue-3 w-6 h-[4px] bottom-0 rounded-full max-md:hidden" :style="navCurrentStyle"></i>
+                </div>
+                <div class="flex space-x-2 whitespace-nowrap" @click.stop="showlogin=true">
+                    <button type="button" class="yp-btn">登录</button>
+                    <button type="button" class="yp-btn max-lg:hidden">注册</button>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto mt-5 text-sm">
+            <div class="flex items-center bg-white px-3 py-2 text-blue-3 rounded">
+                <div><i class="ri-arrow-left-s-line text-2xl"></i></div>
+                <div class="cursor-pointer">返回个人主页</div>
+            </div>
+        </div>
+
+        <div class="mt-5 flex md:space-x-5 max-md:px-2 container mx-auto">
+            <div class="bg-white w-52 p-2 rounded space-y-3 text-gray-600">
+                <div class="flex items-center space-x-2 bg-gray-3 p-3 text-blue-3 cursor-pointer">
+                    <div>
+                        <i class="ri-pass-valid-fill ri-lg"></i>
+                    </div>
+                    <div>个人资料</div>
+                </div>
+                <div class="flex items-center space-x-2 hover:bg-gray-3 p-3 hover:text-blue-3 duration-300 cursor-pointer">
+                    <div>
+                        <i class="ri-user-fill ri-lg"></i>
+                    </div>
+                    <div>账号设置</div>
+                </div>
+                <div class="flex items-center space-x-2 hover:bg-gray-3 p-3 hover:text-blue-3 duration-300 cursor-pointer">
+                    <div>
+                        <i class="ri-settings-2-fill ri-lg"></i>
+                    </div>
+                    <div>通用设置</div>
+                </div>
+                <div class="flex items-center space-x-2 hover:bg-gray-3 p-3 hover:text-blue-3 duration-300 cursor-pointer">
+                    <div>
+                        <i class="ri-message-3-fill ri-lg"></i>
+                    </div>
+                    <div>消息设置</div>
+                </div>
+                <div class="flex items-center space-x-2 hover:bg-gray-3 p-3 hover:text-blue-3 duration-300 cursor-pointer">
+                    <div>
+                        <i class="ri-strikethrough ri-lg"></i>
+                    </div>
+                    <div>屏蔽管理</div>
+                </div>
+                <div class="flex items-center space-x-2 hover:bg-gray-3 p-3 hover:text-blue-3 duration-300 cursor-pointer">
+                    <div>
+                        <i class="ri-price-tag-3-fill ri-lg"></i>
+                    </div>
+                    <div>标签管理</div>
+                </div>
+
+
+            </div>
+            <div class="flex-1 bg-white rounded">
+                <div class="py-3 px-5 border-b">个人资料</div>
+                <div class="flex text-sm">
+                    <div class="flex-1 p-5 space-y-5">
+                        <ypinput v-model="formData.username" title="昵称" :must="true" :focus_field="focus_field=='username'?true:false" @click.stop="focus_field='username'"></ypinput>
+                        <yparea v-model="formData.intro" title="简介" :must="true" max_length="100" :focus_field="focus_field=='intro'?true:false" @click.stop="focus_field='intro'"></yparea>
+                    </div>
+                    <div class="w-80"></div>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <input type="text" title="birthday" id="birthday">
+        </div>
+        <div class="fixed bottom-0 p-3 bg-gray-2 w-full text-gray-6 text-center md:text-sm max-md:text-xs z-40">
+            <p>&copy;2023 东海县一品网络技术有限公司 版权所有 </p>
+            <p><a rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="hover:text-red-1">苏ICP备2022044423号-2</a></p>
+        </div>
+        <transition name="ypanimation">
+            <yplogin @close="showlogin=false" v-if="showlogin"></yplogin>
+        </transition>
+         
+    </div>
+</body>
+<script src="./../js/import.js?load=profile" id="animatic" type="module"></script>
+</html>
